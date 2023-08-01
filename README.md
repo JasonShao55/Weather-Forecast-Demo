@@ -1,6 +1,9 @@
 # Campus Weather-A Weather Forecast Demo
 This was a weather forecast android application I desgined when I was trying to put computer networking knowledge into practice.
 
+When creating this project, I learned how to use Retrofit for making network requests, parsing JSON data with Gson, managing asynchronous operations with Kotlin's coroutines, using LiveData to emit data in a lifecycle-conscious way, the repository pattern for abstracting data sources etc. I also learned how to annotate data class properties to map them to differently named JSON fields using @SerializedName. In conclusion this was a successful attempt in Android app development.
+
+
 ## Overview
 Campus Weather is a cross-continental application developed to provide accurate and real-time weather information across the globe. Utilizing the powerful API of 彩云天气, it brings weather data right to your fingertips. Through a meticulously designed interface, users can search for weather details by city names and visualize the forecast with captivating visual elements.
 
@@ -19,6 +22,17 @@ Campus Weather is a cross-continental application developed to provide accurate 
 
 ## How it Works
 The entire application is driven by HTTP requests, making use of HTTP's GET operation. From searching cities to displaying weather, everything is conducted over HTTPS protocols. Each module, including `PlaceService`, `WeatherService`, and `NuaaWeatherNetwork`, plays a unique role in fetching and displaying data, aided by Retrofit's HTTP libraries.
+
+## Code Specification:
+This code is a part of a weather application named "Campus Weather"(or "NuaaWeather"), written in Kotlin, and primarily designed for the Android platform. The application retrieves weather data from an external API (QWeather's API) using Retrofit library for making network requests, and Google's Gson library for parsing JSON data.
+
+- The classes `PlaceResponse`, `Place`, `Location`, and `Reference` are data models that correspond to the structure of the data the application receives from the weather API.
+- The class `Sky` maps different weather conditions to corresponding icon and background image resources.
+- `NuaaWeatherNetwork` is an object that encapsulates the network operations, which include making a call to the API and handling the response using Kotlin's coroutine concept for asynchrony.
+- `PlaceService` is an interface that defines the endpoint for searching places with Retrofit.
+- `ServiceCreator` is an object that creates an instance of Retrofit with the base URL of the weather API and a Gson converter factory.
+- `Repository` is an object that provides a method for searching places, which makes use of NuaaWeatherNetwork to retrieve data, and handles any errors that might occur during the process.
+- `NuaaWeatherApplication` is the main application class, where the application's context is stored and can be accessed statically.
 
 ![1](https://github.com/JasonShao55/Weather-Forecast-Demo/assets/61415289/044ee0f9-f38d-471d-ac9f-73cc595ff15c) ![2](https://github.com/JasonShao55/Weather-Forecast-Demo/assets/61415289/7095c8d7-48df-4cae-adfa-3d9303ae4f54)
 
