@@ -23,7 +23,7 @@ Campus Weather is a cross-continental application developed to provide accurate 
 ## How it Works
 The entire application is driven by HTTP requests, making use of HTTP's GET operation. From searching cities to displaying weather, everything is conducted over HTTPS protocols. Each module, including `PlaceService`, `WeatherService`, and `NuaaWeatherNetwork`, plays a unique role in fetching and displaying data, aided by Retrofit's HTTP libraries.
 
-## Code Specification:
+## Code Specifications:
 This code is a part of a weather application named "Campus Weather"(or "NuaaWeather"), written in Kotlin, and primarily designed for the Android platform. The application retrieves weather data from an external API (QWeather's API) using Retrofit library for making network requests, and Google's Gson library for parsing JSON data.
 
 - The classes `PlaceResponse`, `Place`, `Location`, and `Reference` are data models that correspond to the structure of the data the application receives from the weather API.
